@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import { HiHome } from "react-icons/hi";
+import Footer from "../shared/Footer";
 
 const ErrorPage = () => {
   return (
@@ -13,7 +15,8 @@ const ErrorPage = () => {
             </h3>
             <div>
               <Link to={"/"}>
-                <button className="btn my-4 bg-main hover:bg-main text-white border-none">
+                <button className="btn my-4 flex items-center bg-main hover:bg-main text-white border-none">
+                  <HiHome className="text-xl"></HiHome>
                   Go Home
                 </button>
               </Link>
@@ -21,6 +24,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

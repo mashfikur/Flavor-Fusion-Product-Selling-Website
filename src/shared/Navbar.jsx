@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex space-x-3">
           <button className="btn  hover:bg-main btn-outline">Register</button>
-          <button className="btn bg-main text-white">Login</button>
+          <button className="btn bg-main hover:bg-main text-white">Login</button>
         </div>
       </div>
     </div>
