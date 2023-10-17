@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "brand_name": "Coca-Cola",
+        "brand_logo": "https://i.ibb.co/2j6D6wt/brand-1.png"
+    },
+    {
+        "id": 2,
+        "brand_name": "McDonald's",
+        "brand_logo": "https://i.ibb.co/f8vhjzW/brand-2.png"
+    },
+    {
+        "id": 3,
+        "brand_name": "Starbucks",
+        "brand_logo": "https://i.ibb.co/4dx1rLL/brand-3.png"
+    },
+    {
+        "id": 4,
+        "brand_name": "PepsiCo",
+        "brand_logo": "https://i.ibb.co/wMrPj4t/brand-4.png"
+    },
+    {
+        "id": 5,
+        "brand_name": "Nestlé",
+        "brand_logo": "https://i.ibb.co/0h7S37Y/brand-5.png"
+    },
+    {
+        "id": 6,
+        "brand_name": "Kellogg's",
+        "brand_logo": "https://i.ibb.co/5Kc3sp1/brand-6.png"
+    }
+]

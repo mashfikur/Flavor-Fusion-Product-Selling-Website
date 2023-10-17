@@ -14,7 +14,7 @@ const Banner = () => {
     <div className="bg-gray-900 text-white ">
       <div className="container mx-auto  pt-4 pb-12">
         <div className="flex flex-col p-10 xl:flex-row items-center gap-8">
-          <div className="z-10 flex-1">
+          <div className=" flex-1">
             <h3 className=" text-4xl lg:text-7xl font-bold">
               Embark on a Global Culinary Journey with <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300  to-blue-500 ">
