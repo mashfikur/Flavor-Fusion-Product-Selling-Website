@@ -8,10 +8,14 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Slider from "./Slider";
+import { useContext } from "react";
+import { AuthContext } from "../../Authentication/AuthProvider";
 
 const Banner = () => {
+  const { darkTheme } = useContext(AuthContext);
+
   return (
-    <div className="bg-gray-900 text-white ">
+    <div className={` ${darkTheme ? "bg-gray-900 text-white" : "text-black"}`}>
       <div className="container mx-auto  pt-4 pb-12">
         <div className="flex flex-col p-10 xl:flex-row items-center gap-8">
           <div className=" flex-1">
