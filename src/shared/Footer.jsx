@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Authentication/AuthProvider";
 
 const Footer = () => {
+  const { darkTheme } = useContext(AuthContext);
+
   return (
-    <div className="bg-main">
+    <div className={`${darkTheme?"bg-black":"bg-neutral"}`}>
       <div className="container mx-auto">
         <footer className="footer p-10  text-neutral-content">
           <aside>
