@@ -1,19 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
-  const navLinks = <>
-  
-    <NavLink>Home</NavLink>
-    <NavLink>Add Product</NavLink>
-    <NavLink>Home</NavLink>
-  
-  </>
+  const navLinks = (
+    <>
+      <NavLink to={"/"} >Home</NavLink>
+      <NavLink to={"/add-products"} >Add Product</NavLink>
+    </>
+  );
 
   return (
-    <div>
+    <div className="container mx-auto pt-4 ">
       <div className="navbar bg-base-100">
-        <div className="navbar-start">
+        <div className="navbar-start hidden lg:flex">
+          <ul className="menu text-base font-semibold flex items-center space-x-6 menu-horizontal px-1">
+            {navLinks}
+          </ul>
+        </div>
+        <div className="navbar-center">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -35,52 +38,16 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {navLinks}
             </ul>
           </div>
-          <NavLink className="normal-case font-cairo font-bold text-xl">Flavor Fusion</NavLink>
+          <Link className="normal-case text-[#60196d]  font-cairo font-bold text-5xl">
+            Flavor Fusion
+          </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-3">
+          <button className="btn  hover:bg-[#60196d] btn-outline">Register</button>
+          <button className="btn bg-[#60196d] text-white">Login</button>
         </div>
       </div>
     </div>
