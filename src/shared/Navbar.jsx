@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navLinks = (
     <>
-      <NavLink to={"/"} >Home</NavLink>
-      <NavLink to={"/add-products"} >Add Product</NavLink>
+      <NavLink to={"/"}>Home</NavLink>
+      <NavLink to={"/add-products"}>Add Product</NavLink>
     </>
   );
 
@@ -36,18 +36,20 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content  space-y-4 mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52 font-semibold"
             >
               {navLinks}
+              <NavLink to={"/login"}>Login</NavLink>
+              <NavLink to={"/register"}>Register</NavLink>
             </ul>
           </div>
-          <Link className="normal-case text-[#60196d]  font-cairo font-bold text-5xl">
+          <Link className="normal-case text-main font-cairo text-4xl font-bold lg:text-5xl">
             Flavor Fusion
           </Link>
         </div>
-        <div className="navbar-end space-x-3">
-          <button className="btn  hover:bg-[#60196d] btn-outline">Register</button>
-          <button className="btn bg-[#60196d] text-white">Login</button>
+        <div className="navbar-end hidden lg:flex space-x-3">
+          <button className="btn  hover:bg-main btn-outline">Register</button>
+          <button className="btn bg-main text-white">Login</button>
         </div>
       </div>
     </div>

@@ -8,6 +8,9 @@ export default {
         inter: "Inter, sans-serif",
         manrope: "Manrope, sans-serif",
       },
+      colors:{
+        main:"#60196d"
+      }
     },
   },
   plugins: [require("daisyui")],
