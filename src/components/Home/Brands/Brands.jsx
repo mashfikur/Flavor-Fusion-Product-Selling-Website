@@ -11,11 +11,11 @@ const Brands = () => {
   }, []);
 
   return (
-    <div className="my-8 container mx-auto">
+    <div className="min-h-screen lg:mt-16 container mx-auto">
       <h3 className="text-center font-manrope font-bold text-5xl ">
         Brands We Provide
       </h3>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 my-12 gap-7">
         {allBrands.map((brand) => (
           <Brand key={brand.id} brand={brand}></Brand>
         ))}
