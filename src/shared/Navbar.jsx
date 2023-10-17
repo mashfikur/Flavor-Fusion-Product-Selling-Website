@@ -43,13 +43,15 @@ const Navbar = () => {
               <NavLink to={"/register"}>Register</NavLink>
             </ul>
           </div>
-          <Link className="normal-case text-main font-cairo text-4xl font-bold lg:text-5xl">
+          <Link className="normal-case text-main font-cairo text-4xl font-bold lg:text-5xl ">
             Flavor Fusion
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex space-x-3">
           <button className="btn  hover:bg-main btn-outline">Register</button>
-          <button className="btn bg-main hover:bg-main text-white">Login</button>
+          <button className="btn bg-main hover:bg-main text-white">
+            Login
+          </button>
         </div>
       </div>
     </div>

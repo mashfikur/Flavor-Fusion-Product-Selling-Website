@@ -9,7 +9,7 @@ export default {
         manrope: "Manrope, sans-serif",
       },
       colors:{
-        main:"#60196d"
+        main:"#111827"
       }
     },
   },
