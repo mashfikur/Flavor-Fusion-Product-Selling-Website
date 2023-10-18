@@ -49,19 +49,20 @@ const Banner = () => {
             <SwiperSlide>
               {" "}
               <Slider
+                image={"https://i.ibb.co/5WsQ2Y1/banner-slider-3.jpg"}
+              ></Slider>{" "}
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <Slider
                 image={"https://i.ibb.co/6BBdTv8/banner-slider-1.jpg"}
               ></Slider>{" "}
             </SwiperSlide>
+
             <SwiperSlide>
               {" "}
               <Slider
-                image={"https://i.ibb.co/CWtTrr9/banner-slider-2.jpg"}
-              ></Slider>{" "}
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <Slider
-                image={"https://i.ibb.co/5WsQ2Y1/banner-slider-3.jpg"}
+                image={"https://i.ibb.co/wpHXnxS/banner-slider-5.jpg"}
               ></Slider>{" "}
             </SwiperSlide>
             <SwiperSlide>
@@ -73,7 +74,7 @@ const Banner = () => {
             <SwiperSlide>
               {" "}
               <Slider
-                image={"https://i.ibb.co/wpHXnxS/banner-slider-5.jpg"}
+                image={"https://i.ibb.co/CWtTrr9/banner-slider-2.jpg"}
               ></Slider>{" "}
             </SwiperSlide>
           </Swiper>

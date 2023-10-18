@@ -13,12 +13,16 @@ const Brands = () => {
   }, []);
 
   return (
-    <div className={`${darkTheme?"bg-main text-white ":""}`} >
+    <div
+      className={`${
+        darkTheme
+          ? "bg-gradient-to-br from-teal-400 via-blue-900 to-stone-500 text-white "
+          : "text-black"
+      }`}
+    >
       <div className={`min-h-screen py-12 lg:pt-16 container mx-auto`}>
-        <h3 className="text-center font-bold text-5xl ">
-          Brands We Provide
-        </h3>
-        <div className="grid grid-cols-1 p-5 md:grid-cols-2 lg:grid-cols-3 my-12 gap-7">
+        <h3 className="text-center font-bold text-5xl ">Brands We Provide</h3>
+        <div className="grid grid-cols-1 p-5 xl:p-0 md:grid-cols-2 lg:grid-cols-3 my-12 gap-7">
           {allBrands.map((brand) => (
             <Brand key={brand.id} brand={brand}></Brand>
           ))}

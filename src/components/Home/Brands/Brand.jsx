@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Brand = ({ brand }) => {
   const { brand_name, brand_logo } = brand;
   return (
-    <div className="border shadow-xl rounded-lg p-3 flex flex-col items-center justify-center gap-4">
+    <div className="border shadow-xl rounded-lg p-3  flex flex-col items-center justify-center gap-4">
       <div className="flex-grow flex flex-col items-center justify-center">
         <img className="w-[10rem] h-[10rem] rounded-lg " src={brand_logo} alt="" />
       </div>
