@@ -91,6 +91,7 @@ const AddProduct = () => {
                     </option>
                     <option>Coca-Cola</option>
                     <option>Starbucks</option>
+                    <option>Nestlé</option>
                     <option>{"McDonald's"}</option>
                     <option>PepsiCo</option>
                     <option>{"Kellogg's"}</option>
