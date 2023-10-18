@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../Authentication/AuthProvider";
+
 const AddProduct = () => {
+  const { darkTheme } = useContext(AuthContext);
+
   const handlSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -23,9 +28,17 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="bg-base-200 py-10">
+    <div
+      className={`${
+        darkTheme
+          ? "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900"
+          : "bg-base-200"
+      } py-10`}
+    >
       <div className="text-center  z-50 relative lg:text-center">
-        <h1 className="text-3xl mb-20 lg:mb-12 xl:mb-0 lg:text-5xl font-bold ">
+        <h1
+          className={`text-3xl mb-20 lg:mb-12 xl:mb-0 lg:text-6xl ${darkTheme && "bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-gray-300 to-blue-500" }  font-bold `}
+        >
           Add Product
         </h1>
       </div>
