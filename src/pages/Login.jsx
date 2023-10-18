@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Authentication/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { userSignIn, setLoading } = useContext(AuthContext);
@@ -30,6 +31,10 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Flavor Fusion | Login </title>
+      </Helmet>
+      
       <div>
         <div className="hero min-h-[90vh] bg-base-200">
           <div className="hero-content flex-col lg:flex-row">

@@ -108,7 +108,11 @@ const Navbar = () => {
                         <div className="w-10 rounded-full">
                           <img
                             className="border-2 rounded-full border-[#2257ca]"
-                            src={user.photoURL}
+                            src={
+                              user.photoURL
+                                ? user.photoURL
+                                : "https://i.ibb.co/bHYZB8H/user-placehoder.png"
+                            }
                           />
                         </div>
                       </label>
@@ -127,7 +131,7 @@ const Navbar = () => {
                             Logout
                           </button>
                         </li>
-                        <hr />
+                        <hr className="flex md:hidden" />
                         <>
                           <div className="flex md:hidden items-center gap-3">
                             <h3 className="font-semibold">Switch Theme : </h3>

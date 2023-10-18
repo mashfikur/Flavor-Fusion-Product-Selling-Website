@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import { HiHome } from "react-icons/hi";
 import Footer from "../shared/Footer";
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Flavor Fusion | Error </title>
+      </Helmet>
       <Navbar></Navbar>
       <div className="min-h-screen error-bg ">
         <div className="overlay">

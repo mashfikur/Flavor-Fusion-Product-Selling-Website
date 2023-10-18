@@ -4,6 +4,7 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { AuthContext } from "../Authentication/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -51,7 +52,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Created Account Successfully");
-        form.reset()
+        form.reset();
 
         // updating the user
         updateProfile(result.user, {
@@ -60,6 +61,7 @@ const Register = () => {
         })
           .then(() => {
             // profile updated
+            window.location.reload();
           })
           .catch((error) => {
             console.error(error);
@@ -72,6 +74,9 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Flavor Fusion | Register </title>
+      </Helmet>
       <div>
         <div className="hero min-h-[90vh] bg-base-200">
           <div className="hero-content flex-col lg:flex-col">
