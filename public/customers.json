@@ -40,6 +40,27 @@
         "customer_img": "https://randomuser.me/api/portraits/men/62.jpg",
         "customer_review": "Outstanding service and product quality. Highly recommended!",
         "customer_rating": 5
+      },
+      {
+        "id": 7,
+        "customer_name": "Sophia Miller",
+        "customer_img": "https://randomuser.me/api/portraits/women/2.jpg",
+        "customer_review": "The customer support team was helpful when I had questions. I had a positive experience.",
+        "customer_rating": 4
+      },
+      {
+        "id": 8,
+        "customer_name": "Lucas Taylor",
+        "customer_img": "https://randomuser.me/api/portraits/men/60.jpg",
+        "customer_review": "The products were well-packaged and arrived in perfect condition.",
+        "customer_rating": 4.5
+      },
+      {
+        "id": 9,
+        "customer_name": "Mia Lee",
+        "customer_img": "https://randomuser.me/api/portraits/women/27.jpg",
+        "customer_review": "I had a smooth shopping experience on their website. The layout is user-friendly.",
+        "customer_rating": 4
       }
   ]
   

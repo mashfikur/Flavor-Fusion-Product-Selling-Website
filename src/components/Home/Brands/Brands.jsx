@@ -16,7 +16,7 @@ const Brands = () => {
     <div
       className={`${
         darkTheme
-          ? "bg-gradient-to-br from-teal-400 via-blue-900 to-stone-500 text-white "
+          ? "bg-gradient-to-br from-teal-400 via-blue-900 to-blue-500 text-white "
           : "text-black"
       }`}
     >
