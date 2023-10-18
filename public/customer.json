@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "customer_name": "Alice Johnson",
+      "customer_img": "https://randomuser.me/api/portraits/men/74.jpg",
+      "customer_review": "Great service! I was very impressed with the quality of the products and the fast delivery.",
+      "customer_rating": 5
+    },
+    {
+      "id": 2,
+      "customer_name": "Bob Smith",
+      "customer_img": "https://randomuser.me/api/portraits/men/49.jpg",
+      "customer_review": "Excellent customer support. They resolved my issue quickly and efficiently.",
+      "customer_rating": 4
+    },
+    {
+      "id": 3,
+      "customer_name": "Eva Martinez",
+      "customer_img": "https://randomuser.me/api/portraits/women/31.jpg",
+      "customer_review": "I love the variety of products they offer. Prices are reasonable too.",
+      "customer_rating": 4.5
+    },
+    {
+      "id": 4,
+      "customer_name": "David Brown",
+      "customer_img": "https://randomuser.me/api/portraits/men/46.jpg",
+      "customer_review": "Good experience overall. The website is user-friendly.",
+      "customer_rating": 3.5
+    },
+    {
+      "id": 5,
+      "customer_name": "Olivia Wilson",
+      "customer_img": "https://randomuser.me/api/portraits/women/91.jpg",
+      "customer_review": "The products I ordered were exactly as described. Will shop here again.",
+      "customer_rating": 5
+    },
+    {
+        "id": 6,
+        "customer_name": "Michael Davis",
+        "customer_img": "https://randomuser.me/api/portraits/men/62.jpg",
+        "customer_review": "Outstanding service and product quality. Highly recommended!",
+        "customer_rating": 5
+      }
+  ]
+  

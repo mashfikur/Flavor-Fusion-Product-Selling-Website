@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import { AuthContext } from "../Authentication/AuthProvider";
+import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
   const [showError, setShowError] = useState(false);
+
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +45,29 @@ const Register = () => {
       setShowError("Your password should contain a special charectar");
       return;
     }
+
+    // creating a user
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Created Account Successfully");
+        form.reset()
+
+        // updating the user
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            // profile updated
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
   };
 
   return (
