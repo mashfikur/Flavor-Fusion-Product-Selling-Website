@@ -40,7 +40,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto pt-4 ">
-        <div className="navbar pr-6 md:px-10 md:pr-0 lg:px-9 xl:px-0">
+        <div className="navbar  pr-6 md:px-10 md:pr-0 lg:px-9 xl:px-0">
           <div className="navbar-start hidden lg:flex">
             <ul className="menu  font-semibold flex items-center space-x-6 menu-horizontal px-1">
               {navLinks}
@@ -91,13 +91,13 @@ const Navbar = () => {
                 )}
               </ul>
             </div>
-            <Link
+            <h3
               className={`normal-case ${
                 darkTheme ? "text-white" : "text-main"
               } font-cairo text-4xl font-bold lg:text-5xl`}
             >
-              Flavor Fusion
-            </Link>
+              <Link to={"/"}>Flavor Fusion</Link>
+            </h3>
           </div>
           <div className="navbar-end space-x-3">
             {loading ? (
