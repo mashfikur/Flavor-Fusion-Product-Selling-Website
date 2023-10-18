@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Authentication/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { userSignIn, setLoading } = useContext(AuthContext);
+  const { userSignIn, setLoading, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +24,19 @@ const Login = () => {
         console.log(result.user);
         form.reset();
         toast.success("Logged In Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.code);
+        setLoading(false);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        toast.success("Logged In Successfully");
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error.code);
@@ -34,7 +49,7 @@ const Login = () => {
       <Helmet>
         <title>Flavor Fusion | Login </title>
       </Helmet>
-      
+
       <div>
         <div className="hero min-h-[90vh] bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
@@ -78,6 +93,16 @@ const Login = () => {
                   </button>
                 </div>
               </form>
+              <div className="divider -mt-3 mb-2 ">OR</div>
+              <div className=" flex flex-col items-center px-8">
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="btn w-full btn-outline hover:bg-[#2257ca] hover:text-white hover:border-none "
+                >
+                  <FcGoogle className="text-xl"></FcGoogle>
+                  Sign In with Google
+                </button>
+              </div>
 
               <div>
                 <h3 className="text-center">

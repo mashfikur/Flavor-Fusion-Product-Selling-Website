@@ -1,16 +1,18 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { AuthContext } from "../Authentication/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
   const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn, setLoading } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,6 +63,7 @@ const Register = () => {
         })
           .then(() => {
             // profile updated
+            navigate("/");
             window.location.reload();
           })
           .catch((error) => {
@@ -69,6 +72,18 @@ const Register = () => {
       })
       .catch((error) => {
         toast.error(error.code);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        toast.success("Created  Account Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.code);
+        setLoading(false);
       });
   };
 
@@ -168,6 +183,19 @@ const Register = () => {
                   </button>
                 </div>
               </form>
+
+              <div className="divider">OR</div>
+              <div>
+                <div className=" flex flex-col items-center px-8">
+                  <button
+                    onClick={handleGoogleSignIn}
+                    className="btn w-full btn-outline hover:bg-[#2257ca] hover:text-white hover:border-none "
+                  >
+                    <FcGoogle className="text-xl"></FcGoogle>
+                    Sign Up with Google
+                  </button>
+                </div>
+              </div>
 
               <div>
                 <h3 className="text-center">

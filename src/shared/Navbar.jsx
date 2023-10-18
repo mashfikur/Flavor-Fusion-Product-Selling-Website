@@ -15,7 +15,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={"px-4 py-2 rounded-full bg-transparent "}
-        to={"/add-products"}
+        to={"/add-product"}
       >
         Add Product
       </NavLink>
@@ -71,18 +71,24 @@ const Navbar = () => {
                 } rounded-box w-52 font-semibold`}
               >
                 {navLinks}
-                <NavLink
-                  className={"px-4 py-2 rounded-full bg-transparent "}
-                  to={"/login"}
-                >
-                  Login
-                </NavLink>
-                <NavLink
-                  className={"px-4 py-2 rounded-full bg-transparent "}
-                  to={"/register"}
-                >
-                  Register
-                </NavLink>
+                {user ? (
+                  ""
+                ) : (
+                  <>
+                    <NavLink
+                      className={"px-4 py-2 rounded-full bg-transparent "}
+                      to={"/login"}
+                    >
+                      Login
+                    </NavLink>
+                    <NavLink
+                      className={"px-4 py-2 rounded-full bg-transparent "}
+                      to={"/register"}
+                    >
+                      Register
+                    </NavLink>
+                  </>
+                )}
               </ul>
             </div>
             <Link
@@ -217,6 +223,7 @@ const Navbar = () => {
                         {/* this hidden checkbox controls the state */}
                         <input
                           onClick={() => setDarkTheme(!darkTheme)}
+                          defaultChecked
                           type="checkbox"
                         />
 
