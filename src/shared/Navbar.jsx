@@ -36,11 +36,11 @@ const Navbar = () => {
   return (
     <div
       className={`${
-        darkTheme ? "bg-[#161616] text-white" : "bg-base-100 text-black"
+        darkTheme ? "bg-[#161616] text-white" : "bg-base-300 text-black"
       }`}
     >
       <div className="container mx-auto pt-4 ">
-        <div className="navbar  pr-6 md:px-10 md:pr-0 lg:px-9 xl:px-0">
+        <div className={`navbar  pr-6 md:px-10 md:pr-0 lg:px-9 xl:px-0`}>
           <div className="navbar-start hidden lg:flex">
             <ul className="menu  font-semibold flex items-center space-x-6 menu-horizontal px-1">
               {navLinks}
