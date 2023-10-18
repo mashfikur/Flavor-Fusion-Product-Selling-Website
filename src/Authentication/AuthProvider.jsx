@@ -4,7 +4,10 @@ import auth from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
+import { useEffect } from "react";
 
 export const AuthContext = createContext(null);
 
@@ -19,16 +22,30 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  // signing in a user
+  const userSignIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  // signing out a user
+  const userSignOut = () => {
+    return signOut(auth);
+  };
+
   // ovserving the current user
-  onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser) {
-      setUser(currentUser);
-      setLoading(false)
-    }else{
-      setUser(null)
-      setLoading(false)
-    }
-  });
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    });
+
+    return () => unSubscribe();
+  }, []);
 
   const userInfo = {
     user,
@@ -38,6 +55,8 @@ const AuthProvider = ({ children }) => {
     darkTheme,
     setDarkTheme,
     createUser,
+    userSignOut,
+    userSignIn,
   };
 
   return (
