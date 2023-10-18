@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Authentication/AuthProvider";
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
-  const {darkTheme}=useContext(AuthContext)
+  const { darkTheme } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("/customers.json")
@@ -14,7 +14,11 @@ const Customers = () => {
   }, []);
 
   return (
-    <div className={`py-16  ${darkTheme?"bg-gradient-to-r from-blue-400 to-emerald-400" : "bg-white"}`}>
+    <div
+      className={` min-h-[90vh] py-10 flex flex-col items-center justify-center  ${
+        darkTheme ? "bg-gradient-to-r from-blue-400 to-emerald-400" : "bg-white"
+      }`}
+    >
       <h3 className="text-center text-5xl px-4 font-semibold mb-12">
         Hear what our <span className="text-green-600">customers</span> has to
         say
