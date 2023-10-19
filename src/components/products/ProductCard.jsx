@@ -5,23 +5,25 @@ import Rating from "react-rating";
 const ProductCard = ({ product }) => {
   return (
     <div>
-      <div className=" rounded-lg h-[33rem]  bg-base-100 shadow-xl">
-        <div>
+      <div className=" rounded-lg h-[34rem]  bg-base-100 shadow-xl">
+        <div className="mb-2">
           <img
             className="w-full h-[18rem] rounded-t-lg"
             src={product.prodImg}
             alt="Product"
           />
         </div>
-        <div className="mt-3 flex flex-col  px-6 text-center">
-          <div className="space-y-2 mb-3">
+        <div className="grid grid-cols-1 grid-rows-2 px-6 text-center">
+          <div className="space-y-2 flex flex-col items-center flex-grow mb-3">
             <h2 className="text-center font-semibold text-2xl">
               {product.prodName}
             </h2>
             <div className="badge badge-outline">{product.type}</div>
+          </div>
+          <div className="flex-grow">
             <p className="font-semibold text-gray-400">{product.description}</p>
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 ">
             <div className="flex items-center justify-between">
               <p className="font-semibold text-xl">
                 Price :<span className="text-gray-500"> ${product.price} </span>{" "}

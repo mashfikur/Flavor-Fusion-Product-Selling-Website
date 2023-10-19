@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Outlet, useLoaderData, useParams } from "react-router-dom";
+import { Link, Outlet, useLoaderData, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useEffect } from "react";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const BrandDetails = () => {
   const { name } = useParams();
@@ -20,11 +21,19 @@ const BrandDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className="px-4 lg:px-2 ">
+      <div className="container scale-90 lg:scale-100 flex flex-col items-center lg:block mx-auto mt-5">
+        <Link to={"/"}>
+          <button className="btn btn-outline">
+            <AiOutlineArrowLeft></AiOutlineArrowLeft>
+            Back to Home
+          </button>
+        </Link>
+      </div>
       <Helmet>
         <title>Flavor Fusion | {name.toUpperCase()} </title>
       </Helmet>
-      <h3 className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 my-6 text-center font-bold">
+      <h3 className=" text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 my-6 text-center font-bold">
         {name.toUpperCase()}
       </h3>
       <div className="container mx-auto">
@@ -46,7 +55,7 @@ const BrandDetails = () => {
             <SwiperSlide key={idx}>
               <div className="w-full">
                 <img
-                  className="w-[70%] h-[30rem] mx-auto"
+                  className="w-[80%] h-[10rem] md:h-[20rem] lg:h-[30rem] lg:w-[70%] mx-auto"
                   src={slider}
                   alt="slider-Image"
                 />
