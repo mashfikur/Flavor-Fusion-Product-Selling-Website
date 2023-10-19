@@ -43,15 +43,17 @@ const ProductCard = ({ product }) => {
               </p>
             </div>
             <div className=" flex items-center justify-center gap-4 ">
-              <Link to={`/product/${product._id}/update`} >
+              <Link to={`/product/${product._id}/update`}>
                 <button className="btn bg-[#2257ca] hover:bg-[#2257ca] text-white rounded-full">
                   Update
                 </button>
               </Link>
 
-              <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white rounded-full">
-                Details
-              </button>
+              <Link to={`/product/${product._id}`}>
+                <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white rounded-full">
+                  Details
+                </button>
+              </Link>
             </div>
           </div>
         </div>
