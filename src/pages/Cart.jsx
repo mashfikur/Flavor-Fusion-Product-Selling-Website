@@ -2,7 +2,7 @@ import { removeItem } from "localforage";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { BsCart3 } from "react-icons/bs";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Cart = () => {
   const loadedCartData = useLoaderData();
@@ -73,7 +73,12 @@ const Cart = () => {
                           alt=""
                         />
                       </td>
-                      <td>{cartItem.prodName}</td>
+                      <td>
+                        {" "}
+                        <Link to={`/product/${cartItem.itemId}`}>
+                          {cartItem.prodName}
+                        </Link>{" "}
+                      </td>
                       <td>{cartItem.brandName.toUpperCase()}</td>
                       <td>{cartItem.price}</td>
                       <td>
