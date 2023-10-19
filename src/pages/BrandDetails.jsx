@@ -22,7 +22,7 @@ const BrandDetails = () => {
 
   return (
     <div className="px-4 lg:px-2 ">
-      <div className="container scale-90 lg:scale-100 flex flex-col items-center lg:block mx-auto mt-5">
+      <div className="container scale-90 lg:scale-100 flex flex-col items-center xl:block mx-auto mt-5">
         <Link to={"/"}>
           <button className="btn btn-outline">
             <AiOutlineArrowLeft></AiOutlineArrowLeft>
@@ -36,7 +36,7 @@ const BrandDetails = () => {
       <h3 className=" text-4xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 my-6 text-center font-bold">
         {name.toUpperCase()}
       </h3>
-      <div className="container mx-auto">
+      <div className="container mx-auto scale-105 md:scale-100">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
