@@ -38,7 +38,7 @@ const AddProduct = () => {
       .then((data) => {
         if (data.insertedId) {
           toast.success("Product Added Successfully");
-          form.reset()
+          form.reset();
         }
       });
   };
@@ -83,18 +83,20 @@ const AddProduct = () => {
                     <span className="label-text">Brand Name</span>
                   </label>
                   <select
+                    required
                     name="brand_name"
                     className="select select-bordered focus:outline-none  w-full"
+                    defaultValue={""}
                   >
-                    <option disabled selected>
+                    <option value="" disabled>
                       Select Your Brand
                     </option>
-                    <option>Coca-Cola</option>
-                    <option>Starbucks</option>
-                    <option>Nestlé</option>
-                    <option>{"McDonald's"}</option>
-                    <option>PepsiCo</option>
-                    <option>{"Kellogg's"}</option>
+                    <option value="Coca-Cola">Coca-Cola</option>
+                    <option value="Starbucks">Starbucks</option>
+                    <option value="Nestlé">Nestlé</option>
+                    <option value="McDonald's">{"McDonald's"}</option>
+                    <option value="PepsiCo">PepsiCo</option>
+                    <option value="Kellogg's">{"Kellogg's"}</option>
                   </select>
                 </div>
               </div>
@@ -116,17 +118,19 @@ const AddProduct = () => {
                     <span className="label-text">Type</span>
                   </label>
                   <select
+                    required
                     name="type"
                     className="select select-bordered focus:outline-none  w-full"
+                    defaultValue={""}
                   >
-                    <option disabled selected>
+                    <option value={""} disabled>
                       Select Product Type
                     </option>
-                    <option>Breverage</option>
-                    <option>Burger</option>
-                    <option>Coffee</option>
-                    <option>Soft Drinks</option>
-                    <option>Snacks</option>
+                    <option value={"Breverage"}>Breverage</option>
+                    <option value={"Burger"}>Burger</option>
+                    <option value={"Coffee"}>Coffee</option>
+                    <option value={"Soft Drinks"}>Soft Drinks</option>
+                    <option value={"Snacks"}>Snacks</option>
                   </select>
                 </div>
               </div>
@@ -173,7 +177,9 @@ const AddProduct = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Add Product</button>
+                <button className="btn bg-[#2257ca] hover:bg-[#2257ca] text-white ">
+                  Add Product
+                </button>
               </div>
             </form>
           </div>
