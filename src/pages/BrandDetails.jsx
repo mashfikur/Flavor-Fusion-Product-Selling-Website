@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Outlet, useLoaderData, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -8,18 +8,23 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useEffect } from "react";
 
 const BrandDetails = () => {
   const { name } = useParams();
   const loadedBrandAds = useLoaderData();
   const sliderImages = loadedBrandAds[0]?.sliderImage;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <Helmet>
         <title>Flavor Fusion | {name.toUpperCase()} </title>
       </Helmet>
-      <h3 className="text-4xl my-6 text-center font-bold">
+      <h3 className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 my-6 text-center font-bold">
         {name.toUpperCase()}
       </h3>
       <div className="container mx-auto">
@@ -41,7 +46,7 @@ const BrandDetails = () => {
             <SwiperSlide key={idx}>
               <div className="w-full">
                 <img
-                  className="w-[60%] mx-auto"
+                  className="w-[70%] h-[30rem] mx-auto"
                   src={slider}
                   alt="slider-Image"
                 />
@@ -51,9 +56,7 @@ const BrandDetails = () => {
         </Swiper>
       </div>
 
-      <div className="container mx-auto my-12">
-        <h3 className="text-5xl font-semibold text-center">Products</h3>
-      </div>
+      <Outlet></Outlet>
     </div>
   );
 };

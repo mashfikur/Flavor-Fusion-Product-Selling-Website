@@ -94,7 +94,7 @@ const Navbar = () => {
             <h3
               className={`normal-case ${
                 darkTheme ? "text-white" : "text-main"
-              } font-cairo text-4xl font-bold lg:text-5xl`}
+              } font-cairo text-4xl font-bold lg:text-4xl`}
             >
               <Link to={"/"}>Flavor Fusion</Link>
             </h3>
