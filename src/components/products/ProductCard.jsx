@@ -1,9 +1,55 @@
 import PropTypes from "prop-types";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import Rating from "react-rating";
 
 const ProductCard = ({ product }) => {
   return (
     <div>
-      <h3>{product.prodName}</h3>
+      <div className=" rounded-lg h-[33rem]  bg-base-100 shadow-xl">
+        <div>
+          <img
+            className="w-full h-[18rem] rounded-t-lg"
+            src={product.prodImg}
+            alt="Product"
+          />
+        </div>
+        <div className="mt-3 flex flex-col  px-6 text-center">
+          <div className="space-y-2 mb-3">
+            <h2 className="text-center font-semibold text-2xl">
+              {product.prodName}
+            </h2>
+            <div className="badge badge-outline">{product.type}</div>
+            <p className="font-semibold text-gray-400">{product.description}</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center justify-between">
+              <p className="font-semibold text-xl">
+                Price :<span className="text-gray-500"> ${product.price} </span>{" "}
+              </p>
+              <p>
+                <Rating
+                  initialRating={parseInt(product.rating)}
+                  readonly
+                  fullSymbol={
+                    <AiFillStar className="text-yellow-400 text-xl"></AiFillStar>
+                  }
+                  emptySymbol={
+                    <AiOutlineStar className="text-xl text-yellow-400"></AiOutlineStar>
+                  }
+                ></Rating>
+              </p>
+            </div>
+            <div className=" flex items-center justify-center gap-4 ">
+              <button className="btn bg-[#2257ca] hover:bg-[#2257ca] text-white rounded-full">
+                Update
+              </button>
+              <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white rounded-full">
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

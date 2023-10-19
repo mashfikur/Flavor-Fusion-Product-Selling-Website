@@ -7,12 +7,12 @@ const Products = () => {
 
   return (
     <div>
-      <div className="container mx-auto my-12">
-        <h3 className="text-5xl bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400  font-semibold text-center">
+      <div className="container mx-auto min-h-[80vh] flex flex-col items-center justify-center my-12">
+        <h3 className="text-5xl my-10 bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400  font-semibold text-center">
           Products
         </h3>
 
-        <div>
+        <div className="grid grid-cols-4 gap-4 ">
           {loadedProducts.map((product) => (
             <ProductCard key={product._id} product={product}></ProductCard>
           ))}
