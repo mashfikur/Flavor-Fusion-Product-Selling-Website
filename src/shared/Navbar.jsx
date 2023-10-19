@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
-import { BsSunFill, BsMoonFill } from "react-icons/bs";
+import { BsSunFill, BsMoonFill, BsCart3 } from "react-icons/bs";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto pt-4 ">
-        <div className={`navbar  pr-6 md:px-10 md:pr-0 lg:px-9 xl:px-0`}>
+        <div className={`navbar  pr-2 md:px-20 md:pr-0 lg:px-9 xl:px-0`}>
           <div className="navbar-start hidden lg:flex">
             <ul className="menu  font-semibold flex items-center space-x-6 menu-horizontal px-1">
               {navLinks}
@@ -105,7 +105,10 @@ const Navbar = () => {
             ) : (
               <div>
                 {user ? (
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1  md:gap-4">
+                    <Link to={"/cart"}>
+                      <BsCart3 className="text-2xl"></BsCart3>
+                    </Link>
                     <div className="dropdown dropdown-end z-40 text-black">
                       <label
                         tabIndex={0}
