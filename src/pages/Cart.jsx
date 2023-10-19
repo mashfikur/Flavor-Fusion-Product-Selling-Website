@@ -1,7 +1,5 @@
-import { removeItem } from "localforage";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { BsCart3 } from "react-icons/bs";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Cart = () => {
