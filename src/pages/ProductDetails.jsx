@@ -26,7 +26,16 @@ const ProductDetails = () => {
   } = productInfo;
 
   const handleAddCart = () => {
-    const itemInfo = { itemId: _id };
+    const itemInfo = {
+      itemId: _id,
+      prodName,
+      brandName,
+      prodImg,
+      type,
+      price,
+      rating,
+      description,
+    };
 
     // storing item to my cart in database
     fetch("http://localhost:5000/cart/add", {
