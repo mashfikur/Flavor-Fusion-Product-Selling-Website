@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
@@ -42,9 +43,12 @@ const ProductCard = ({ product }) => {
               </p>
             </div>
             <div className=" flex items-center justify-center gap-4 ">
-              <button className="btn bg-[#2257ca] hover:bg-[#2257ca] text-white rounded-full">
-                Update
-              </button>
+              <Link to={`/product/${product._id}/update`} >
+                <button className="btn bg-[#2257ca] hover:bg-[#2257ca] text-white rounded-full">
+                  Update
+                </button>
+              </Link>
+
               <button className="btn bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400 text-white rounded-full">
                 Details
               </button>
