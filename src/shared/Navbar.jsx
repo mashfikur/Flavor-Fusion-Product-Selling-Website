@@ -253,7 +253,7 @@ const Navbar = () => {
                 )}
 
                 {!user && (
-                  <div className="lg:hidden flex scale-75">
+                  <div className="lg:hidden flex scale-75 pr-4">
                     <div className="tooltip " data-tip="Switch Theme">
                       <label className="swap swap-rotate scale-75">
                         {/* this hidden checkbox controls the state */}

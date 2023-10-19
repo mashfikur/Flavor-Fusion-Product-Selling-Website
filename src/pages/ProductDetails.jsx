@@ -3,6 +3,7 @@ import { AiFillStar, AiOutlineArrowLeft } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const productInfo = useLoaderData();
@@ -23,6 +24,25 @@ const ProductDetails = () => {
     rating,
     description,
   } = productInfo;
+
+  const handleAddCart = () => {
+    const itemInfo = { itemId: _id };
+
+    // storing item to my cart in database
+    fetch("http://localhost:5000/cart/add", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(itemInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Successfully Added Item to Cart");
+        }
+      });
+  };
 
   return (
     <div
@@ -85,7 +105,10 @@ const ProductDetails = () => {
               </p>
             </div>
             <div className="flex flex-col items-end ">
-              <button className="btn bg-green-600 flex items-center hover:bg-green-600 text-white">
+              <button
+                onClick={handleAddCart}
+                className="btn bg-green-600 flex items-center hover:bg-green-600 text-white"
+              >
                 <BsCart3 className="text-xl"></BsCart3>
                 Add To Cart
               </button>
