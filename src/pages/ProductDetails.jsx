@@ -38,7 +38,7 @@ const ProductDetails = () => {
     };
 
     // storing item to my cart in database
-    fetch("http://localhost:5000/cart/add", {
+    fetch("https://flavor-fusion-server-sepia.vercel.app/cart/add", {
       method: "POST",
       headers: {
         "content-type": "application/json",

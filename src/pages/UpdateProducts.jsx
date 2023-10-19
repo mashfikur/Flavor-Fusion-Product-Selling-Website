@@ -48,13 +48,16 @@ const UpdateProducts = () => {
     // console.log(updatedInfo);
 
     //updating info
-    fetch(`http://localhost:5000/products/${_id}/update`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedInfo),
-    })
+    fetch(
+      `https://flavor-fusion-server-sepia.vercel.app/products/${_id}/update`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

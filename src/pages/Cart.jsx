@@ -27,7 +27,7 @@ const Cart = () => {
 
   const handleDelete = (_id) => {
     //deleting user from database
-    fetch(`http://localhost:5000/cart/${_id}/delete`, {
+    fetch(`https://flavor-fusion-server-sepia.vercel.app/cart/${_id}/delete`, {
       method: "DELETE",
     })
       .then((res) => res.json())

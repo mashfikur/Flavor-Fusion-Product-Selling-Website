@@ -37,13 +37,17 @@ const router = createBrowserRouter([
         path: "/brand/:name",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brands/ads/${params.name}`),
+          fetch(
+            `https://flavor-fusion-server-sepia.vercel.app/brands/ads/${params.name}`
+          ),
         children: [
           {
             path: "/brand/:name",
             element: <Products></Products>,
             loader: ({ params }) =>
-              fetch(`http://localhost:5000/brands/${params.name}`),
+              fetch(
+                `https://flavor-fusion-server-sepia.vercel.app/brands/${params.name}`
+              ),
           },
         ],
       },
@@ -51,18 +55,23 @@ const router = createBrowserRouter([
         path: "/product/:id/update",
         element: <UpdateProducts></UpdateProducts>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://flavor-fusion-server-sepia.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/product/:id",
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://flavor-fusion-server-sepia.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/cart",
         element: <Cart></Cart>,
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch("https://flavor-fusion-server-sepia.vercel.app/cart"),
       },
     ],
   },

@@ -27,7 +27,7 @@ const AddProduct = () => {
     };
 
     // adding product to database
-    fetch("http://localhost:5000/products", {
+    fetch("https://flavor-fusion-server-sepia.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
