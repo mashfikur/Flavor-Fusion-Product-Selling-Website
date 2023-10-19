@@ -1,14 +1,24 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../Authentication/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const UpdateProducts = () => {
   const { darkTheme } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const productInfo = useLoaderData();
 
-  const { prodName, brandName, prodImg, type, price, rating, description } =
-    productInfo;
+  const {
+    _id,
+    prodName,
+    brandName,
+    prodImg,
+    type,
+    price,
+    rating,
+    description,
+  } = productInfo;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,7 +45,23 @@ const UpdateProducts = () => {
       description,
     };
 
-    console.log(updatedInfo);
+    // console.log(updatedInfo);
+
+    //updating info
+    fetch(`http://localhost:5000/products/${_id}/update`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          toast.success("Product Updated Successfully");
+          navigate(-1);
+        }
+      });
   };
   return (
     <div>
