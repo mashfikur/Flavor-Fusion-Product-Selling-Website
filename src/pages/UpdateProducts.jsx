@@ -73,7 +73,7 @@ const UpdateProducts = () => {
             : "bg-base-200"
         } py-10`}
       >
-        <div className="text-center  z-50 relative lg:text-center">
+        <div className="text-center  z-10 relative lg:text-center">
           <h1
             className={`text-3xl mb-20 lg:mb-12 xl:mb-0 lg:text-6xl ${
               darkTheme &&

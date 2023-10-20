@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="container mx-auto pt-4 ">
         <div className={`navbar  pr-2 md:px-20 md:pr-0 lg:px-9 xl:px-0`}>
           <div className="navbar-start hidden lg:flex">
-            <ul className="menu  font-semibold flex items-center space-x-6 menu-horizontal px-1">
+            <ul className="menu relative   font-semibold flex items-center space-x-6 menu-horizontal z-50 px-1">
               {navLinks}
             </ul>
           </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content  space-y-4 mt-3 z-[1] p-4 shadow ${
+                className={`menu menu-sm dropdown-content relative space-y-4 mt-3 z-50 p-4 shadow ${
                   darkTheme ? "bg-main" : "bg-base-100"
                 } rounded-box w-52 font-semibold`}
               >
