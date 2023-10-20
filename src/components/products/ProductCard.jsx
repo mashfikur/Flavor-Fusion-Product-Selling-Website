@@ -26,9 +26,6 @@ const ProductCard = ({ product }) => {
               /<div className="badge badge-outline">{product.type}</div>
             </div>
           </div>
-          <div className="flex-grow">
-            <p className="font-semibold text-gray-400">{product.description}</p>
-          </div>
           <div className="flex flex-col gap-3 ">
             <div className="flex items-center justify-between">
               <p className="font-semibold text-xl">
