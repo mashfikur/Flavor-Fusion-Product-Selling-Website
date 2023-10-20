@@ -45,8 +45,6 @@ const UpdateProducts = () => {
       description,
     };
 
-    // console.log(updatedInfo);
-
     //updating info
     fetch(
       `https://flavor-fusion-server-sepia.vercel.app/products/${_id}/update`,

@@ -19,12 +19,9 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
-
     // user sign in
     userSignIn(email, password)
       .then((result) => {
-        console.log(result.user);
         form.reset();
         toast.success("Logged In Successfully");
         navigate(from, { replace: true });
