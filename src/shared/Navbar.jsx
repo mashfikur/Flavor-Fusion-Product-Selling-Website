@@ -106,7 +106,7 @@ const Navbar = () => {
               <div>
                 {user ? (
                   <div className="flex items-center gap-1  md:gap-4">
-                    <Link to={"/cart"}>
+                    <Link to={`/cart/${user?.uid}`}>
                       <BsCart3 className="text-2xl"></BsCart3>
                     </Link>
                     <div className="dropdown dropdown-end z-40 text-black">

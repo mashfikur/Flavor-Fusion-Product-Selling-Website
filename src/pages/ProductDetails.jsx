@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const ProductDetails = () => {
   const productInfo = useLoaderData();
   const navigate = useNavigate();
-  const { darkTheme } = useContext(AuthContext);
+  const { darkTheme, user } = useContext(AuthContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,6 +28,8 @@ const ProductDetails = () => {
   const handleAddCart = () => {
     const itemInfo = {
       itemId: _id,
+      userEmail: user?.email,
+      userId: user?.uid,
       prodName,
       brandName,
       prodImg,

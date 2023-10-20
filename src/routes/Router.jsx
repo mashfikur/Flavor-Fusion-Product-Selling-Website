@@ -81,14 +81,16 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/cart",
+        path: `/cart/:uid`,
         element: (
           <PrivateRoute>
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () =>
-          fetch("https://flavor-fusion-server-sepia.vercel.app/cart"),
+        loader: ({ params }) =>
+          fetch(
+            `https://flavor-fusion-server-sepia.vercel.app/cart/${params.uid}`
+          ),
       },
     ],
   },
