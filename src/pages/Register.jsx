@@ -72,6 +72,7 @@ const Register = () => {
       })
       .catch((error) => {
         toast.error(error.code);
+        setLoading(false)
       });
   };
 
