@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   return (
     <div>
-      <div className=" rounded-lg h-[34rem]  bg-base-100 shadow-xl">
+      <div className=" rounded-lg   bg-base-100 shadow-xl">
         <div className="mb-2">
           <img
             className="w-full h-[18rem] rounded-t-lg"
@@ -14,12 +14,17 @@ const ProductCard = ({ product }) => {
             alt="Product"
           />
         </div>
-        <div className="grid grid-cols-1 grid-rows-2 px-6 text-center">
+        <div className="grid grid-cols-1 grid-rows-2 px-6 pb-4 text-center">
           <div className="space-y-2 flex flex-col items-center flex-grow mb-3">
             <h2 className="text-center font-semibold text-2xl">
               {product.prodName}
             </h2>
-            <div className="badge badge-outline">{product.type}</div>
+            <div className="flex gap-1">
+              <div className="badge badge-neutral">
+                {product.brandName.toUpperCase()}
+              </div>
+              /<div className="badge badge-outline">{product.type}</div>
+            </div>
           </div>
           <div className="flex-grow">
             <p className="font-semibold text-gray-400">{product.description}</p>
