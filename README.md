@@ -4,13 +4,15 @@ This is a React web application made with **React Router** ,**Tailwind CSS**, **
 
 The website is available here - [Live link](https://flavor-fusion-f6e7d.web.app/)
 
+Server Side Code - [Code Link](https://github.com/mashfikur/Flavor-Fusion-Server)
+
 ## About This project
 
 - This website offers products based on different brands and dynamically provides brand advertisement slides.
 
 - Anyone can visit the website and create an acccount with email and password or sign in with google to become a user of this website
 
-- This website has protected route as known as a privat routing system . So the user has to be a valid user to access the items of this website .
+- This website has protected route as known as a private routing system . So the user has to be a valid user to access the items of this website .
 
 - User can add items to cart and then visit their cart to see their added items , they can also remove the items from their cart .
 
